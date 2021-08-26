@@ -1,26 +1,45 @@
-// import logo from './logo.svg';
-// import './App.css';
+import Navbar from "./components/Navbar";
+import Peliculas from "./components/Peliculas";
+import NotFound from "./components/NotFound";
+import Personas from "./components/Personas";
+import Programas from "./components/Programas";
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
-//azucar sintactico: JSX => JS + HTML/XML
 
 function App() {
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-         hOLA A TODAS
-        </a>
-      </header>
-    </div>
+<Router>
+  <Navbar/>
+  <Switch>
+    
+    <Route exact path="/">
+    <Peliculas/>
+    </Route>
+
+    <Route exact path="/programas-television"> 
+    <Programas/>
+    </Route>
+
+    <Route exact path="/personas"> 
+    <Personas/>
+    </Route>
+
+    <Route path="*"> 
+    <NotFound/>
+    </Route>
+
+  </Switch>
+</Router>
+
+
+
+
+
+
+
+
+    
   );
 }
 
