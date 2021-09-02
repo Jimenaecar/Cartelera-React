@@ -6,7 +6,8 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg text-light bg-dark">
   <div className="container-fluid">
-    <Link to="/" className="navbar-brand text-white" href="#">Películas</Link>
+    <Link to="/" className="navbar-brand text-white" href="#">Inicio</Link>
+    <Link to="/peliculas" className="navbar-brand text-white" href="#">Películas</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>

@@ -1,18 +1,24 @@
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import CardPersonas from './CardPersonas';
 
 const Personas = () => {
+
+    const [personas,setPersonas]= useState([]);
+
+    useEffect(()=>{
+        fetch(`https://api.themoviedb.org/3/person/popular?api_key=${process.env.API_KEY_TMDB}`)
+        .then(response => response.json())
+        .then(data => setPersonas(data.results));
+    },[])
+   
     return ( 
-        <div>
-            <div className="jumbotron">
-  <h1 className="display-4">Personas</h1>
-  <hr className="my-4"/>
-  <p>It uses utility classNamees for typography and spacing to space content out within the larger container.</p>
-  <p className="lead">
-    <Link to="/"className="btn btn-primary btn-lg" href="#" role="button">Volver al Inicio</Link>
-  </p>
-</div>
+        <div className="">
+            <div className="row" style={{display:"flex", flexFlow: "rowWrap", contentAligh: "center"}}>
+            {personas.map(item=> <CardPersonas namePers ={item.name} place_of_birth ={item.place_of_birth} birthday ={item.birthday} imagePers ={item.profile_path} idPers={item.id}
+            />)}  
+            </div>
+           
         </div>
      );
 }
- 
-export default Personas;
+export default Personas; 
