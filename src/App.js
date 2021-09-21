@@ -1,14 +1,19 @@
 import Navbar from "./components/Navbar";
-import Peliculas from "./components/Peliculas";
+import Peliculas from "./views/Peliculas";
 import NotFound from "./components/NotFound";
-import Personas from "./components/Personas";
-import Programas from "./components/Programas";
-import Carousel from "./components/CarouselInicio"
-import Inicio from "./views/Inicio";
+import Personas from "./views/Personas"
+import Programas from "./views/Programas";
+import Carousel from "./components/Carousel"
+import Inicio from "./views/Home";
 import MovieDetails from "./components/MovieDetails";
 import ShowDetails from "./components/ShowDetails";
 import PersonasDetails from "./components/PersonasDetails";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Trending from "./views/Trending";
+import TrendDetails from "./components/TrendDetails";
+import AddFavorites from "./components/AddFavorites";
+import RateTvDetails from "./components/RateTvDetails";
+import RatingTv from "./views/RatingTv";
 
 
 
@@ -48,6 +53,22 @@ function App() {
     <PersonasDetails/>
     </Route>
 
+    <Route exact path="/tendencias"> 
+    <Trending/>
+    </Route>
+
+    <Route exact path="/tendencias/:idTrend"> 
+    <TrendDetails/>
+    </Route>
+
+    <Route exact path="/popular"> 
+    <RatingTv/>
+    </Route>
+
+    <Route exact path="/popular/:idRate"> 
+    <RateTvDetails/>
+    </Route>
+
     <Route path="*"> 
     <NotFound/>
     </Route>
@@ -55,7 +76,7 @@ function App() {
   </Switch>
 </Router>
 
-
+ 
 
 
 
