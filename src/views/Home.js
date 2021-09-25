@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from '../components/Carousel';
 import CardTrend from '../components/CardTrend';
+import RateTvDetails from '../components/RateDetails';
+import RatingTv from './RatingTv';
 import Trending from './Trending';
-import TrendingTv from './RatingTv';
 
 const Home = () => {
   const [home,setHome]= useState([]);
@@ -31,7 +32,7 @@ const Home = () => {
           <div className="row rowCard">
           <h4 className="row" style={{fontWeight:"bold"}}>Series con Mejor Rating</h4>
             <div className= "m-0" style={{display:"flex",flexDirection:"row"}}> 
-            <TrendingTv/>
+            <RatingTv/>
             </div>
           </div>
         </div>

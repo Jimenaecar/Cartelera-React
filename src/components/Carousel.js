@@ -8,19 +8,20 @@
      <div className="carouselHome">
 <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
+    {home.map((item,index)=>
+    index ===0?
     <div className="carousel-item active">
-      <img src={cine} className="d-block w-100" alt="..." />
+      <img src={'https://image.tmdb.org/t/p/w500'+item.backdrop_path} className="d-block w-100" alt="..." />
       <div className="carousel-caption d-none d-md-block">
       </div>
-    </div>
-
-    {home.map((item => 
+    </div>:
     <div className="carousel-item">
     <img src={'https://image.tmdb.org/t/p/w500'+item.backdrop_path}  className="d-block w-100" alt="..." />
     <div className="carousel-caption d-none d-md-block">
     </div>
-  </div>
-  ))}
+  </div>)}
+  
+  )
       
     
     <div className="carousel-item">

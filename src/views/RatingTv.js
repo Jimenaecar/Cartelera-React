@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import CardRate from '../components/CardRate';
-import RateTvDetails from '../components/RateTvDetails';
+import RateTvDetails from '../components/RateDetails';
 
 const RatingTv = () => {
-const [rate,setrate]= useState([]);
+const [rate,setRate]= useState([]);
 
 useEffect(()=>{
-    fetch(`
-    https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
     .then(response => response.json())
-    .then(data => setrate(data.results));
+    .then(data => {setRate(data.results)});
     
 },[])
 

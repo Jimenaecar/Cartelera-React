@@ -3,8 +3,6 @@ import React,{ useEffect, useState } from "react";
 import Trending from "../views/Trending";
 import CardTrend from "./CardTrend";
 
-
-
 const TrendDetails = () => {
     
   const{idTrend}= useParams();

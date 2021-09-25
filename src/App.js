@@ -12,7 +12,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Trending from "./views/Trending";
 import TrendDetails from "./components/TrendDetails";
 import AddFavorites from "./components/AddFavorites";
-import RateTvDetails from "./components/RateTvDetails";
+import RateDetails from "./components/RateDetails";
 import RatingTv from "./views/RatingTv";
 
 
@@ -66,7 +66,7 @@ function App() {
     </Route>
 
     <Route exact path="/popular/:idRate"> 
-    <RateTvDetails/>
+    <RateDetails/>
     </Route>
 
     <Route path="*"> 

@@ -3,18 +3,15 @@ import React,{ useEffect, useState } from "react";
 import CardRate from "./CardRate";
 import RatingTv from "../views/RatingTv";
 
-
-
-const RateTvDetails = () => {
-    
+const RateDetails = () => {
   const{idRate}= useParams();
-  const [rateDetails,setrateDetails] = useState({});
+  const [rateDetails,setRateDetails] = useState({});
 
     useEffect(()=>{
-  fetch(`https://api.themoviedb.org/3/tv/popular?${idRate}api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular${idRate}?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
         .then((response) => response.json())
         .then((data) => {
-          return setrateDetails(data)
+          return setRateDetails(data)
     });
     },[])
 
@@ -44,4 +41,4 @@ const RateTvDetails = () => {
      );
 }
 
-export default RateTvDetails;
+export default RateDetails;
