@@ -6,7 +6,7 @@ const[shows,setShows]= useState([]);
 
 
     useEffect(()=>{
-        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY_TMDB}`)
+        fetch(`https://api.themoviedb.org/3/tv/popular?api_key=66fe2d4dcf98813e405cc05181238577`)
         .then(response => response.json())
         .then(data => setShows(data.results));
         console.log(shows);
